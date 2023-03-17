@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -18,4 +19,13 @@ h1 {
   width: 600px;
   height: 600px;
   border: 7px solid #7d94b5;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inside-div {
+  border: 2px solid black;
+  width: 25%;
+  height: 25%;
+  flex: 1 1 auto;
 }
