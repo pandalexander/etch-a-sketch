@@ -25,7 +25,6 @@ h1 {
 
 .inside-div {
   border: 1px solid black;
-  width: 6.25%;
-  height: 6.25%;
+
   flex: 1 1 auto;
 }
