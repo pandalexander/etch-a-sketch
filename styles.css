@@ -24,7 +24,11 @@ h1 {
 }
 
 .inside-div {
-  border: 1px solid black;
-
+  border: 1px solid #7d94b5;
   flex: 1 1 auto;
+  background-color: white;
+}
+
+.inside-div:hover {
+  background-color: #c29591;
 }
