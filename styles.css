@@ -36,3 +36,29 @@ h1 {
 .inside-div-clicked {
   background-color: #c29591;
 }
+
+#buttons-container {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  font-family: "Work Sans", sans-serif;
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #7d94b5;
+  border: none;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #5a6c84;
+}
+
+button:active {
+  background-color: #b6c199;
+}
