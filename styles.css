@@ -30,7 +30,7 @@ h1 {
 }
 
 .inside-div:hover {
-  background-color: #b6c199;
+  background-color: lightgray;
 }
 
 .inside-div-clicked {
