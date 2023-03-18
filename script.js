@@ -39,3 +39,9 @@ for (let i = 0; i < insideDivGroup.length; i++) {
     }
   });
 }
+
+let chooseNumberButton = document.getElementById("choose-number-button");
+
+chooseNumberButton.addEventListener("click", () => {
+  createSketchBox(+prompt("How many blocks would you like on the side?"));
+});
