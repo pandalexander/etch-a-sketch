@@ -1,20 +1,29 @@
 // inside-div
 
 const sketchBox = document.getElementById("sketch-box");
-let numberOfSides = 16;
-let numberOfDivs = Math.pow(numberOfSides, 2);
-
+// let numberOfSides = 16;
 let insideDiv;
 let insideDivGroup = document.getElementsByClassName("inside-div");
 
-for (i = 0; i < numberOfDivs; i++) {
-  insideDiv = document.createElement("div");
-  insideDiv.classList.add("inside-div");
-  insideDiv.style.width = 100 / numberOfSides + "%";
-  insideDiv.style.height = 100 / numberOfSides + "%";
+function createSketchBox(numberOfSides) {
+  while (insideDivGroup.length > 0) {
+    for (i = 0; i < insideDivGroup.length; i++) {
+      insideDivGroup[i].remove();
+    }
+  }
 
-  sketchBox.appendChild(insideDiv);
+  let numberOfDivs = Math.pow(numberOfSides, 2);
+  for (i = 0; i < numberOfDivs; i++) {
+    insideDiv = document.createElement("div");
+    insideDiv.classList.add("inside-div");
+    insideDiv.style.width = 100 / numberOfSides + "%";
+    insideDiv.style.height = 100 / numberOfSides + "%";
+    sketchBox.appendChild(insideDiv);
+  }
 }
+
+createSketchBox(16);
+
 let isMouseDown = false;
 window.addEventListener("mousedown", () => {
   isMouseDown = true;
