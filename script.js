@@ -16,29 +16,29 @@ function createSketchBox(numberOfSides) {
     insideDiv.style.height = 100 / numberOfSides + "%";
     sketchBox.appendChild(insideDiv);
   }
+
+  let isMouseDown = false;
+  window.addEventListener("mousedown", () => {
+    isMouseDown = true;
+  });
+
+  window.addEventListener("mouseup", () => {
+    isMouseDown = false;
+  });
+
+  for (let i = 0; i < insideDivGroup.length; i++) {
+    insideDivGroup[i].addEventListener("click", () => {
+      insideDivGroup[i].classList.add("inside-div-clicked");
+    });
+    insideDivGroup[i].addEventListener("mouseover", () => {
+      if (isMouseDown) {
+        insideDivGroup[i].classList.add("inside-div-clicked");
+      }
+    });
+  }
 }
 
 createSketchBox(16);
-
-let isMouseDown = false;
-window.addEventListener("mousedown", () => {
-  isMouseDown = true;
-});
-
-window.addEventListener("mouseup", () => {
-  isMouseDown = false;
-});
-
-for (let i = 0; i < insideDivGroup.length; i++) {
-  insideDivGroup[i].addEventListener("click", () => {
-    insideDivGroup[i].classList.add("inside-div-clicked");
-  });
-  insideDivGroup[i].addEventListener("mouseover", () => {
-    if (isMouseDown) {
-      insideDivGroup[i].classList.add("inside-div-clicked");
-    }
-  });
-}
 
 let chooseNumberButton = document.getElementById("choose-number-button");
 
