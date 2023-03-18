@@ -1,7 +1,4 @@
-// inside-div
-
 const sketchBox = document.getElementById("sketch-box");
-// let numberOfSides = 16;
 let insideDiv;
 let insideDivGroup = document.getElementsByClassName("inside-div");
 
@@ -11,7 +8,6 @@ function createSketchBox(numberOfSides) {
       insideDivGroup[i].remove();
     }
   }
-
   let numberOfDivs = Math.pow(numberOfSides, 2);
   for (i = 0; i < numberOfDivs; i++) {
     insideDiv = document.createElement("div");
