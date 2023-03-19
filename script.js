@@ -42,15 +42,25 @@ createSketchBox(16);
 
 let chooseNumberButton = document.getElementById("choose-number-button");
 chooseNumberButton.addEventListener("click", () => {
-  createSketchBox(+prompt("How many blocks would you like on the side?"));
+  let userInput = +prompt(
+    "How many blocks would you like on the side? Between 16 and 100 please."
+  );
+  if (userInput == 0) {
+    alert("Something went wrong. Try again whenever you want!");
+  } else if (isNaN(userInput)) {
+    alert("Something went wrong. Please try again with a number please.");
+  } else if (userInput > 100) {
+    createSketchBox(100);
+  } else if (userInput < 16) {
+    createSketchBox(16);
+  } else {
+    createSketchBox(userInput);
+  }
 });
 
 let clearSketchButton = document.getElementById("clear-button");
 clearSketchButton.addEventListener("click", () => {
-  //document.getElementById("inside-div-clicked");
-
   createSketchBox(
     Math.sqrt(+document.querySelectorAll("div.inside-div").length)
   );
-  //console.log(document.querySelectorAll("div.inside-div").length);
 });
