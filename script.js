@@ -1,8 +1,8 @@
 const sketchBox = document.getElementById("sketch-box");
-let insideDiv;
-let insideDivGroup = document.getElementsByClassName("inside-div");
 
 function createSketchBox(numberOfSides) {
+  let insideDiv;
+  let insideDivGroup = document.getElementsByClassName("inside-div");
   while (insideDivGroup.length > 0) {
     for (i = 0; i < insideDivGroup.length; i++) {
       insideDivGroup[i].remove();
@@ -41,7 +41,16 @@ function createSketchBox(numberOfSides) {
 createSketchBox(16);
 
 let chooseNumberButton = document.getElementById("choose-number-button");
-
 chooseNumberButton.addEventListener("click", () => {
   createSketchBox(+prompt("How many blocks would you like on the side?"));
+});
+
+let clearSketchButton = document.getElementById("clear-button");
+clearSketchButton.addEventListener("click", () => {
+  //document.getElementById("inside-div-clicked");
+
+  createSketchBox(
+    Math.sqrt(+document.querySelectorAll("div.inside-div").length)
+  );
+  //console.log(document.querySelectorAll("div.inside-div").length);
 });
