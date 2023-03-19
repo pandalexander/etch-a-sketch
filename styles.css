@@ -13,11 +13,14 @@ body {
 
 h1 {
   color: #703f37;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 45px;
 }
 
 #sketch-box {
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   border: 7px solid #7d94b5;
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +41,7 @@ h1 {
 }
 
 #buttons-container {
-  width: 600px;
+  width: 500px;
   display: flex;
   justify-content: space-between;
 }
