@@ -43,16 +43,14 @@ createSketchBox(16);
 let chooseNumberButton = document.getElementById("choose-number-button");
 chooseNumberButton.addEventListener("click", () => {
   let userInput = +prompt(
-    "How many blocks would you like on the side? Between 16 and 100 please."
+    "How many blocks would you like on the side? Less than 100 please."
   );
   if (userInput == 0) {
     alert("Something went wrong. Try again whenever you want!");
   } else if (isNaN(userInput)) {
-    alert("Something went wrong. Please try again with a number please.");
+    alert("Something went wrong. Please try again.");
   } else if (userInput > 100) {
     createSketchBox(100);
-  } else if (userInput < 16) {
-    createSketchBox(16);
   } else {
     createSketchBox(userInput);
   }
